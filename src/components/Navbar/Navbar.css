@@ -1,0 +1,26 @@
+.nav-item{
+    font-size: 22px;
+    padding-left: 10px;
+    
+}
+.nav-link{
+    color: aliceblue;
+    font-family:outfit;
+}
+.nav-link:hover{
+background-color: rgba(255, 255, 255, 0.048);
+border-radius: 5px;
+    color: rgb(255, 255, 255);
+}
+
+.navbar-brand{
+    font-size: 32px;
+    font-family: 'Gill Sans';
+    font-weight: bold;
+}
+
+.btn{
+    
+    width: 6rem;
+
+}

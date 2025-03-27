@@ -1,0 +1,58 @@
+/* Top-rated.css */
+.top-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #121212;
+  }
+  
+  .top-card {
+    background: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .top-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .top-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 3px solid #ffcc00;
+  }
+  
+  .top-card h3 {
+    color: #ffffff;
+    font-size: 18px;
+    margin: 10px 0;
+    padding: 0 10px;
+  }
+  
+  .top-card a {
+    display: inline-block;
+    padding: 8px 15px;
+    margin-bottom: 15px;
+    background-color: #ffcc00;
+    color: #121212;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s;
+  }
+  
+  .top-card a:hover {
+    background-color: #e6b800;
+  }
+  
+  @media (max-width: 768px) {
+    .top-card img {
+      height: 300px;
+    }
+  }
+  

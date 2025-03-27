@@ -1,0 +1,87 @@
+/* Global Styles */
+body {
+  background-color: #121212;
+  font-family: Arial, sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* Movie Container */
+.movie-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Movie Card */
+.movie-card {
+  background: #1e1e1e;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(66, 66, 66, 0.5);
+}
+
+/* Movie Poster */
+.movie-card img {
+  width: 100%;
+  border-radius: 10px;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Movie Title */
+.movie-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Watch Now Button */
+.movie-card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #ffcc00;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.movie-card a:hover {
+  background-color: #ffcc00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .movie-container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .movie-card img {
+    height: 250px;
+  }
+
+  .movie-card h3 {
+    font-size: 16px;
+  }
+
+  .movie-card a {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
