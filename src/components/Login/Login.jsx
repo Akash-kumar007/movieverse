@@ -34,7 +34,7 @@ export default function Login() {
           className="login-input"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-        />        <button className="login-btn yellow" onClick={handleLogin}>Sign in</button>
+        />        <button className="login-btn yellow" onClick={handleLogin}>Login</button>
 
         <div className="remember-me">
           <input

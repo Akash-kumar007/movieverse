@@ -1,69 +1,45 @@
-import { useState } from "react";
-import "./Signup.css";
+import React, { useState } from 'react';
+import { Link } from "react-router-dom";
+import axios from 'axios';
 
-export default function Signup() {
-  const [fullName, setFullName] = useState("");
+function Signup() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState("");
 
-  const handleSignUp = () => {
-    if (!fullName || !email || !password ) {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    
+    if (!name || !email || !password) {
       setError("All fields are required");
-    } else if (!/^[a-zA-Z ]+$/.test(fullName)) {
-      setError("Full name can only contain letters and spaces");
-    } else if (!/^[0-9]{10}$/.test()) {
-      setError("Phone number must be 10 digits");
-    } else if (password.length < 8) {
-      setError("Password must be at least 8 characters long");
+      return;
+    }
 
-    } else {
-      setError("");
-      alert(`Account created successfully for ${fullName}!`);
+    try {
+      const response = await axios.post('http://localhost:3001/register', { name, email, password });
+      console.log(response.data);
+      alert("Registration Successful!");
+    } catch (err) {
+      console.error(err);
+      setError("Registration failed. Please try again.");
     }
   };
 
   return (
-    <div className="signup-container">
-      <div className="signup-box">
-        <h2>Sign Up</h2>
-        {error && <p className="error-message">{error}</p>}
-        <input
-          type="text"
-          placeholder="Full Name"
-          className="signup-input"
-          value={fullName}
-          onChange={(e) => setFullName(e.target.value)}
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          className="signup-input"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password (min 8 characters)"
-          className="signup-input"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button className="signup-btn primary" onClick={handleSignUp}>Sign Up</button>
-
-        <div className="remember-me">
-          <input
-            type="checkbox"
-            id="rememberMe"
-            checked={rememberMe}
-            onChange={() => setRememberMe(!rememberMe)}
-          />
-          <label htmlFor="rememberMe">Remember Me</label>
-        </div>
-        <p className="help-text"><a href="#">Need help?</a></p>
-        <p className="already-account">Already have an account? <a href="Login">Login</a></p>
-      </div>
+    <div className="signup-container" style={{ maxWidth: "400px", margin: "auto", padding: "20px", textAlign: "center" }}>
+      <h2>Sign Up</h2>
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      <form onSubmit={handleSubmit}>
+        <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required /><br /><br />
+        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required /><br /><br />
+        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required /><br /><br />
+        <button type="submit">Register</button>
+      </form>
+      <p>Already have an account? <Link to="/login">Login</Link></p>
     </div>
   );
 }
+
+export default Signup;

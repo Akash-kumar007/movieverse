@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./Top_rated.css";
+import "./Hindi.css";
 
-const TopRated = () => {
+const Hindi = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -45,5 +45,5 @@ const TopRated = () => {
   );
 };
 
-export default TopRated;
+export default Hindi;
 

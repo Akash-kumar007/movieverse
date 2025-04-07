@@ -1,124 +1,60 @@
-/* SignUpPage.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
 
-/* Background Styling */
 .signup-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-    background: url('https://user-images.githubusercontent.com/16425113/129554147-6ac7ba51-43e7-4c8e-ba77-e646a3ef6b12.jpg') no-repeat center center/cover;
-  }
-  
-  /* Card Styling */
-  .signup-box {
-    background: rgba(0, 0, 0, 0.61);
-    padding: 2.5rem;
-    border-radius: 20px;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    max-width: 420px;
-    width: 100%;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .signup-box:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Input Fields */
-  .signup-input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 18px;
-    border: 1px solid #bbb;
-    border-radius: 10px;
-    outline: none;
-    transition: all 0.3s;
-  }
-  
-  
-  .signup-input:focus {
-    border-color: #ff6f61;
-    box-shadow: 0 0 5px rgba(255, 111, 97, 0.6);
-  }
-  
-  /* Remember Me */
-  .remember-me {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #e6e6e6;
-    margin-left: -14rem;
-    font-size: 14px;
-  }
-  
-  .remember-me input {
-    margin-right: 8px;
-  }
-  
-  /* Button Styling */
-  .signup-btn {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    font-size: 17px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-    margin-bottom: 10px;
-  }
-  
-  .signup-btn.primary {
-    background: #ffee00;
-    color: rgb(0, 0, 0);
-  }
-  
-  .signup-btn.primary:hover {
-    background: #ffe600;
-    transform: translateY(-2px);
-  }
-  
-  .signup-btn.secondary {
-    background: #e7e7e7ee;
-    color: white;
-  }
-  
-  .signup-btn.secondary:hover {
-    background: #e6e6e6;
-    transform: translateY(-2px);
-  }
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
 
-  h2{
-    color: white;
-  }
-  
-  /* Error Message Styling */
-  .error-message {
-    color: #d32f2f;
-    font-size: 15px;
-    font-weight: bold;
-    margin-bottom: 12px;
-  }
-  .help-text{
-    font-size: 12px;
-    margin-top: -2rem;
-    margin-left: 17rem;
-    color: #e6e6e6;
-  }
-  /* Help and Already Have Account */
- .already-account {
-    font-size: 15px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-top: 20px;
-    color: #e6e6e6;
-  }
-  
-  .help-text a, .already-account a {
-    color: #e4e4e4e7;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .help-text a:hover, .already-account a:hover {
-    text-decoration: underline;
-  }
+h2 {
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+p {
+  margin-top: 10px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

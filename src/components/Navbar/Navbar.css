@@ -9,9 +9,14 @@
 }
 .nav-link:hover{
 background-color: rgba(255, 255, 255, 0.048);
-border-radius: 5px;
+border-radius: 7px;
     color: rgb(255, 255, 255);
 }
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+    color: #f8d210 !important; /* Highlight color */
+    border-bottom: 2px solid #f8d210;
+  }
 
 .navbar-brand{
     font-size: 32px;

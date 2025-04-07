@@ -1,263 +1,54 @@
-// import React from "react";
-// import "./Trending.css";
-
-// const Trendingmovies = [
-//   {
-//     title: "Chhaava",
-//     date: "21 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6nmvyr7XiKDW3m8jBeLSMeDTRpttvSSeSVA&s",
-//     link: "https://www.imdb.com/title/tt1234567/"
-//   },
-//   {
-//     title: "Marco",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://m.media-amazon.com/images/M/MV5BMDNkZmZlOWEtMjIxYS00MzMwLTg4ODYtMDRmNzY2NjY3NDdkXkEyXkFqcGc@._V1_.jpg",
-//     link: "https://www.imdb.com/title/tt2345678/"
-//   },
-//   {
-//     title: "Retro",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://static.moviecrow.com/gallery/20250114/240219-Retro%20Suriya%20Jayaram%20Karunakaran%20Pongal%202025%20Poster%20Karthik%20Subbaraj.jpg",
-//     link: "https://www.imdb.com/title/tt3456789/"
-//   },
-//   {
-//     title: "Interstellar",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://lh6.googleusercontent.com/proxy/NRxbWaO4joOZS6UfQnxNrHhYCLilDWNOLigisOtfTqsknaVLkWdmIM3DQDky2l_uEzXlmLT7xJ-hApzek6u10Sptyo58Vu_ucTzL",
-//     link: "https://www.imdb.com/title/tt0816692/"
-//   },  {
-//     title: "DeadPool & Wolverine",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://cdn.marvel.com/content/1x/dp3_1sht_digital_srgb_ka_swords_v5_resized.jpg"
-//   },  {
-//     title: "Dragon",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://image.tmdb.org/t/p/w185/b77Su1i74L28InBsyaFlfWPDpeE.jpg"
-//   },  {
-//     title: "Bhool Bhulaiyaa 3 (2024) ",
-//     date: "20 Mar 2024",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://imb.rest/wp-content/uploads/2024/11/image-2024-11-02T211300.837.webp"
-//   },  {
-//     title: "Devara : Part 1 (2024)",
-//     date: "20 Mar 2024",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://image.tmdb.org/t/p/w185/u46N3WC11mR5vAFPcVbHg7WK05f.jpg"
-//   },  {
-//     title: "Crazxy (2025) ",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://imb.rest/wp-content/uploads/2025/02/nWxEtbryAPP7gI0TtNYejoAUJlr.jpg"
-//   },  {
-//     title: "The Diplomat (2025)",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://image.tmdb.org/t/p/w185/uwl9Y4px8TTIQK4N19k6gnW1RnX.jpg"
-//   }, 
-//   {
-//     title: "Emergency (2025)",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://image.tmdb.org/t/p/w185/yp5eg70g6LaZoBiApOv9oerzvvX.jpg"
-//   },
-//   {
-//     title: "Shaitaan (2024)",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://image.tmdb.org/t/p/w185/nCK46DFCOMInVfSLraWDEOhMciE.jpg"
-//   },
-//   {
-//     title: "Stree 2 (2024)",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://image.tmdb.org/t/p/w185/zgxpT5Q5pe3FtL99F0UOIglPGrQ.jpg"
-//   },
-//   {
-//     title: "Kalki 2898 – AD (2024)",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://image.tmdb.org/t/p/w185/rstcAnBeCkxNQjNp3YXrF6IP1tW.jpg"
-//   },
-//   {
-//     title: "(Pri)sons (2024) ",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://image.tmdb.org/t/p/w185/nWII5qq7VPwgrHI4otsRWLsYyRb.jpg"
-//   },
-//   {
-//     title: "Swag (2024) ",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://image.tmdb.org/t/p/w185/59j909O4PVE7vZxFU0JzuDzLuo7.jpg"
-//   },
-//   {
-//     title: "Agent (2023)",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://image.tmdb.org/t/p/w185/eeIZPzcDXQOainfNSp0MNbcv34g.jpg"
-//   },
-//   {
-//     title: "The Twister: Caught in the Storm (2025)",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://image.tmdb.org/t/p/w185/ggXb37lX9gW4SR7kpMaraXDFeFR.jpg"
-//   },
-//   {
-//     title: "Pushpa 2 – The Rule (2024)",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://image.tmdb.org/t/p/w185/1T21FblunT0y8fz7YaW8JMYgUKm.jpg"
-//   },
-//   {
-//     title: "Vanvaas (2024)",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://image.tmdb.org/t/p/w185/tVD0S5upBwMedBMZuf1aloUrDwY.jpg"
-//   },
-  
-//   {
-//     title: "Demon City (2025)",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://image.tmdb.org/t/p/w185/3edgGAzjzaZwMcvEiTFElIztmF2.jpg"
-//   },
-//   {
-//     title: "Sabdham (2025)",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://image.tmdb.org/t/p/w185/A9iUVHhwIIg2UaOF08x6FNVNTCH.jpg"
-//   },
-//   {
-//     title: "Khel Khel Mein (2024)",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://image.tmdb.org/t/p/w185/32P0oQf41HXbENRGtu2h0rqBF2k.jpg"
-//   },
-//   {
-//     title: "Good Will Hunting (1997) ",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://image.tmdb.org/t/p/w185/bABCBKYBK7A5G1x0FzoeoNfuj2.jpg"
-//   },
-//   {
-//     title: "Boudica: Queen of War ",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://vegamovies.sl/uploads/posts/covers/Poster-Boudica-Queen-of-war-2023.webp"
-//   },
-//   {
-//     title: "Lucifer(2019)",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://vegamovies.sl/uploads/posts/covers/Poster-Lucifer-2019.webp"
-//   },
-//   {
-//     title: "Vikram 2022",
-//     date: "20 Mar 20",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://vegamovies.sl/uploads/posts/covers/Poster-Vikram-2022.webp"
-//   },
-//   {
-//     title: "The Fire Inside 2024",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://vegamovies.sl/uploads/posts/covers/Poster-The-fire-inside-2024.webp"
-//   },
-//   {
-//     title: "Badnaam 2025",
-//     date: "20 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://vegamovies.sl/uploads/posts/covers/Poster-Badnaam-2025.webp"
-//   },
-//   {
-//     title: "Officer on Duty (2025)",
-//     date: "19 Mar 2025",
-//     quality: "WEB-DL 720p - 480p - 1080p",
-//     image: "https://image.tmdb.org/t/p/w185/ucwirgaK4v9ylQyDkwoXJtDIlf7.jpg"
-  
-// }
-// ];
-
-// const Trending = () => {
-//   return (
-//     <div className="movie-container">
-//       <h2 className="movie-heading">Movies</h2>
-//       <div className="movie-list">
-//         {Trendingmovies.map((movie, index) => (
-//           <a key={index} href={movie.link} target="_blank" rel="noopener noreferrer" className="movie-card">
-//             <div className="movie-overlay">
-//               <img src={movie.image} alt={movie.title} className="movie-image" />
-//               <div className="movie-details">
-//                 <p className="movie-date">{movie.date}</p>
-//                 <h3 className="movie-title">{movie.title}</h3>
-//                 <p className="movie-quality">{movie.quality}</p>
-//               </div>
-//             </div>
-//           </a>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-
-// export default Trending;
-
-
-
-
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Trending.css";
 
-const Trending = () => {
-  const [movies, setMovies] = useState([]);
-  const [loading, setLoading] = useState(true);
+const movies = [
+  // Hollywood Movies Released in 2024-2025
+  { id: 1, name: "Godzilla x Kong: The New Empire", date: "March 29, 2024", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2Fmi4kYQvo_Kr6csdN284Wm2o6-zu8ciUDw&s" },
+  { id: 2, name: "Venom: The Last Dance", date: "December 10, 2024", image: "https://www.sonypictures.in/sites/india/files/2024-09/VNM3_INTL_OnLine_6072x9000_TSR_01_1mb.jpg" },
+  { id: 3, name: "The Best Christmas Pageant Ever", date: "December 10, 2024", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuFyVTlsbql7y6-NxFCr2xeC6yf1uOp6B_cg&s" },
+  { id: 4, name: "Dune: Part Two", date: "March 1, 2024", image: "https://m.media-amazon.com/images/I/71cS3aGfH0L.jpg" },
+  { id: 5, name: "Deadpool & Wolverine", date: "July 26, 2024", image: "https://cdn.marvel.com/content/1x/dp3_1sht_digital_srgb_ka_swords_v5_resized.jpg" },
+  { id: 6, name: "Mad Max: Furiosa", date: "May 24, 2024", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6HLmp5Je7Lb7tFl7l27H_1wiBmQO85eY8Wg&s" },
+  
+  // Bollywood Movies Released in 2024-2025
+  { id: 7, name: "Bade Miyan Chote Miyan", date: "April 10, 2024", image: "https://m.media-amazon.com/images/M/MV5BMDE4Yzc3YTctODE5My00Mjg3LWI0ZDktZjM4MmVkMTQ3ZmNmXkEyXkFqcGc@._V1_.jpg" },
+  { id: 8, name: "Singham Again", date: "August 15, 2024", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfQky_9JCt3z3k9NcqrdjL7fiAygJ4GoEGrA&s" },
+  { id: 9, name: "Kalki 2898 AD", date: "May 9, 2024", image: "https://dx35vtwkllhj9.cloudfront.net/prathyangira-cinemas/kalki-2898-ad/images/regions/us/onesheet.jpg" },
+  { id: 10, name: "Fighter", date: "January 25, 2024", image: "https://m.media-amazon.com/images/M/MV5BYmJiYzZhOTktNGIzNy00YjljLWI3ZDgtZGU2YWMzNGQ1YjQ5XkEyXkFqcGc@._V1_.jpg" },
+  { id: 11, name: "Chandu Champion", date: "June 14, 2024", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFsu2ZGJYNAsfcYj87t4-ZJDHO_MRTbAnrNg&s" },
+  { id: 12, name: "The Sabarmati Report", date: "May 3, 2024", image: "https://m.media-amazon.com/images/M/MV5BM2U3OGIzOTYtYjA1OS00ODc0LWJlMGUtYTE2NzlkN2ZjMTNiXkEyXkFqcGc@._V1_.jpg" },
+  
+  // Tollywood Movies Released in 2024-2025
+  { id: 13, name: "Pushpa 2: The Rule", date: "August 15, 2024", image: "https://m.media-amazon.com/images/M/MV5BZjllNTdiM2QtYjQ0Ni00ZGM1LWFlYmUtNWY0YjMzYWIxOTYxXkEyXkFqcGc@._V1_.jpg" },
+  { id: 14, name: "Hari Hara Veera Mallu", date: "March 28, 2025", image: "https://m.media-amazon.com/images/M/MV5BMTBmY2E0MmYtMGVkNi00OTljLTkwZTYtZTFlMGMwNzIzZmE4XkEyXkFqcGc@._V1_.jpg" },
+  { id: 15, name: "Salaar: Part 1 – Ceasefire", date: "December 22, 2024", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ_h3Tx-0t5vEDnz0lWVddXvFRVHT2OpuhTRkVTTYMnCoJseKweFzg0hZ7M0Y0tyVMDwY&usqp=CAU" },
+  { id: 16, name: "Devara: Part 1", date: "April 5, 2024", image: "https://m.media-amazon.com/images/M/MV5BZWEwNmYwYTAtMmQxYS00ZTgwLWE0NmUtNGIwZDEyZmYwN2EwXkEyXkFqcGc@._V1_.jpg" },
+  { id: 17, name: "Guntur Kaaram", date: "January 12, 2024", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmdgoR72rav48YhSahtHBMjQrdP8HWfxzwkA&s" },
+  { id: 18, name: "Marco", date: "December 20, 2024", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgjjEOr5IpnYoaDNfX80zuB93XOiQjcVq4ELvgnSiUcRY4iNQn1lHTdV5rcYMMrHneLFQ&usqp=CAU" },
+  { id: 19, name: "Hanu-Man", date: "January 12, 2024", image: "https://i.pinimg.com/736x/75/2d/29/752d29e9d9cb839a8fc8fb5acd064bad.jpg" },
+  { id: 20, name: "Game Changer", date: "September 2024", image: "https://preview.redd.it/gamechanger-first-look-poster-v0-vnshdy2omaqa1.jpg?width=1080&crop=smart&auto=webp&s=d002b8374f77fe45b3da0fe4895b924b5628067a" }
+];
 
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMzA4NWI3NjhjZWJmZjc5MDY5ZTI3MTM4NWIwNDM5YSIsIm5iZiI6MTc0MjY0NDc1OS43ODU5OTk4LCJzdWIiOiI2N2RlYTYxNzRhYTk2NmNlOGM2OWMwMDAiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.ocHSuKzcWhCvUN7sjgLtFMu33paC2nhZfiYg2AGWEZg"
-    }
-  };
-
-  useEffect(() => {
-    fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1", options)
-      .then((res) => res.json())
-      .then((data) => {
-        setMovies(data.results);  // ✅ Set movies correctly
-        setLoading(false); // ✅ Stop loading when data is ready
-      })
-      .catch((err) => {
-        console.error("Error fetching movies:", err);
-        setLoading(false); 
-      });
-  }, []);
-
-  if (loading) {
-    return <h2>Loading movies...</h2>;
-  }
-
+const MovieCard = ({ movie }) => {
   return (
-    <div className="trending-container">
+    <div className="movie-card">
+      <img src={movie.image} alt={movie.name} className="movie-image" />
+      <div className="movie-overlay">
+        <h2 className="movie-title">{movie.name}</h2>
+        <p className="movie-date">{movie.date}</p>
+      </div>
+    </div>
+  );
+};
+
+const Trending = () => {
+  return (
+    <div className="movie-list">
       {movies.map((movie) => (
-        <div key={movie.id} className="trending-card">
-          <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-          <h3>{movie.title}</h3>
-          <a href={`https://www.themoviedb.org/movie/${movie.id}`} target="_blank" rel="noopener noreferrer">
-            Watch Now
-          </a>
-        </div>
+        <MovieCard key={movie.id} movie={movie} />
       ))}
     </div>
   );
 };
 
 export default Trending;
-
