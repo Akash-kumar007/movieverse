@@ -1,10 +1,52 @@
+
+/* Make the navbar fixed and ensure the search results don't affect its position */
+.custom-navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+  }
+  
+  .search-results-container {
+    background-color: #333;
+    color: white;
+    position: absolute;
+    top: 60px; /* Adjust according to your navbar height */
+    left: 70%;
+    right: 10%;
+    z-index: 1000;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .search-result-item {
+    color: #f8d210;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 0;
+  }
+  
+  .search-result-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    color: white;
+  }
+  
+  .search-results-container h5 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
 .nav-item{
     font-size: 22px;
     padding-left: 10px;
     
 }
 .nav-link{
-    color: aliceblue;
+    color: rgb(255, 255, 255);
     font-family:outfit;
 }
 .nav-link:hover{
@@ -15,7 +57,7 @@ border-radius: 7px;
 .navbar-nav .nav-link.active {
     font-weight: bold;
     color: #f8d210 !important; /* Highlight color */
-    border-bottom: 2px solid #f8d210;
+    border-bottom: 2px solid #f7d114;
   }
 
 .navbar-brand{
@@ -28,4 +70,12 @@ border-radius: 7px;
     
     width: 6rem;
 
+}
+.search-dropdown {
+  top: 100%;
+  z-index: 999;
+  background: white;
+  border: 1px solid #ddd;
+  max-height: 200px;
+  overflow-y: auto;
 }

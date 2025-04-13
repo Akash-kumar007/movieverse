@@ -1,0 +1,105 @@
+/* MoviePlayer.css */
+
+.player-container {
+    background-color: #000;
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+  
+  .player-title {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #e50914; /* Netflix red */
+    font-weight: 700;
+  }
+  
+  .video-box {
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+  }
+  
+  video {
+    width: 100%;
+    height: auto;
+    background-color: #000;
+    border-radius: 12px;
+  }
+  
+  /* Custom controls */
+  .controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 1000px;
+  }
+  
+  button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    color: #e50914;
+  }
+  
+  .seekbar {
+    width: 60%;
+    margin: 0 15px;
+  }
+  
+  .volume-control {
+    width: 100px;
+  }
+  
+  .play-pause-btn,
+  .fullscreen-btn {
+    font-size: 1.2rem;
+  }
+  
+  .seekbar {
+    cursor: pointer;
+  }
+  
+  .seekbar::-webkit-slider-runnable-track {
+    background: #333;
+    height: 8px;
+  }
+  
+  .seekbar::-webkit-slider-thumb {
+    background: #e50914;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .volume-control {
+    cursor: pointer;
+  }
+  
+  .volume-control::-webkit-slider-runnable-track {
+    background: #333;
+    height: 8px;
+  }
+  
+  .volume-control::-webkit-slider-thumb {
+    background: #e50914;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    width: 16px;
+    height: 16px;
+  }
+      

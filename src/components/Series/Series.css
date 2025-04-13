@@ -1,0 +1,78 @@
+/* Container for the whole trending section */
+.series-containerw {
+  background-color: #111; /* black background */
+  color: #fff9f9;
+  padding: 120px 20px;
+  min-height: 100vh;
+}
+
+/* Title styling */
+.series-titlew {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* Grid for movies */
+.movie-gridw {
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  gap: 25px;
+  justify-items: center;
+}
+
+/* Movie card styling */
+.movie-cardw {
+  background-color: #333333;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 220px;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.movie-cardw:hover {
+  transform: scale(1.05);
+}
+
+/* Poster styling */
+.movie-cardw img {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Movie title */
+.movie-namew {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 5px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Release date */
+.movie-datew {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+/* Featured label */
+.movie-cardw::before {
+  content: "FEATURED";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: #00c851; /* green */
+  color: rgb(255, 255, 255);
+  padding: 3px 8px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 5px;
+  z-index: 1;
+}

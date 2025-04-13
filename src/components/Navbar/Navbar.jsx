@@ -1,20 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Navbar.css"; // Add custom CSS file for additional styling
+import "./Navbar.css";
+import axios from "axios";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const location = useLocation(); // Get current path
+  const [movies, setMovies] = useState([]);
+  const [filteredMovies, setFilteredMovies] = useState([]);
+  const location = useLocation();
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleSearchChange = (event) => {
-    setSearchQuery(event.target.value);
+  const fetchMovies = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/api/movies");
+      setMovies(response.data);
+      setFilteredMovies(response.data);
+    } catch (error) {
+      console.error("Error fetching movies:", error);
+    }
   };
+
+  const handleSearchChange = (event) => {
+    const query = event.target.value;
+    setSearchQuery(query);
+
+    if (query === "") {
+      setFilteredMovies(movies);
+    } else {
+      const filtered = movies.filter((movie) =>
+        movie.name.toLowerCase().includes(query.toLowerCase())
+      );
+      setFilteredMovies(filtered);
+    }
+  };
+
+  useEffect(() => {
+    fetchMovies();
+  }, []);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark custom-navbar">
@@ -32,8 +59,9 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+
         <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`} id="navbarNav">
-          <ul className="navbar-nav mx-auto text-center"> 
+          <ul className="navbar-nav mx-auto text-center">
             <li className="nav-item">
               <Link className={`nav-link ${location.pathname === "/" ? "active" : ""}`} to="/" onClick={toggleNavbar}>Home</Link>
             </li>
@@ -42,7 +70,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link className={`nav-link ${location.pathname === "/hindi" ? "active" : ""}`} to="/hindi" onClick={toggleNavbar}>Bollywood</Link>
-            </li>         
+            </li>
             <li className="nav-item">
               <Link className={`nav-link ${location.pathname === "/south" ? "active" : ""}`} to="/south" onClick={toggleNavbar}>Tollywood</Link>
             </li>
@@ -53,9 +81,13 @@ const Navbar = () => {
               <Link className={`nav-link ${location.pathname === "/web-series" ? "active" : ""}`} to="/Web-Series" onClick={toggleNavbar}>Web Series</Link>
             </li>
           </ul>
-          
+
           {/* Search Bar */}
-          <form className="d-flex mx-1" role="search">
+          <form
+            className="d-flex mx-1"
+            role="search"
+            onSubmit={(e) => e.preventDefault()} // Prevent page reload
+          >
             <input
               className="form-control me-2"
               type="search"
@@ -66,14 +98,34 @@ const Navbar = () => {
             />
             <button className="btn btn-outline-light" type="submit">Search</button>
           </form>
-          
-          <ul className="navbar-nav ms-auto text-center"> 
+
+          {/* <ul className="navbar-nav ms-auto text-center">
             <li className="nav-item">
               <Link className={`nav-link ${location.pathname === "/Signup" ? "active" : ""}`} to="/Signup" onClick={toggleNavbar}>SignUp</Link>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
+
+      {/* Display filtered movie results below the search bar */}
+      {searchQuery && (
+        <div className="search-results-container">
+          <h5>Search Results:</h5>
+          <ul className="list-unstyled">
+            {filteredMovies.length > 0 ? (
+              filteredMovies.map((movie) => (
+                <li key={movie._id}>
+                  <Link to={`/movie/${movie._id}`} className="search-result-item">
+                    {movie.name}
+                  </Link>
+                </li>
+              ))
+            ) : (
+              <p>No movies found for "{searchQuery}".</p>
+            )}
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };
